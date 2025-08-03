@@ -9,9 +9,7 @@
     "build:clean": "npm run clean && npm run build",
     "start": "next start",
     "lint": "next lint",
-    "clean": "rimraf .next tsconfig.tsbuildinfo node_modules/.cache",
-    "vercel-build": "next build",
-    "postbuild": "next-sitemap --config next-sitemap.config.js"
+    "clean": "rimraf .next tsconfig.tsbuildinfo node_modules/.cache"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
