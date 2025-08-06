@@ -25,11 +25,11 @@ export const projects: Project[] = [
     longDescription: 'ChordCircle is a social music-sharing platform that lets users connect through their Spotify playlists. Discover new music, find people with similar tastes, and build friendships based on shared vibes. Built with modern web technologies for a seamless music discovery experience.',
     technologies: ['TypeScript', 'Next.js', 'Tailwind CSS', 'Spotify API'],
     category: 'web',
-    image: '/images/ChordC.png',
+    image: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&h=600&fit=crop',
     images: [
-      '/images/ChordC.png',
-      '/images/ChordC.png',
-      '/images/ChordC.png'
+      'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&h=600&fit=crop',
+      'https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?w=800&h=600&fit=crop',
+      'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=800&h=600&fit=crop'
     ],
     githubUrl: 'https://github.com/Anuvesh07/ChordCircle',
     featured: true,
@@ -41,11 +41,11 @@ export const projects: Project[] = [
     longDescription: '🦖 A real-time collaborative whiteboard that stomps latency and crushes creative limits. Draw, brainstorm, and ideate with your team live — from anywhere, on any device. Built for seamless collaboration with real-time synchronization.',
     technologies: ['JavaScript', 'React.js', 'Socket.io', 'Canvas API'],
     category: 'web',
-    image: '/images/Whitz_.png',
+    image: 'https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?w=800&h=600&fit=crop',
     images: [
-      '/images/Whitz_.png',
-      '/images/Whitz_.png',
-      '/images/Whitz_.png'
+      'https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?w=800&h=600&fit=crop',
+      'https://images.unsplash.com/photo-1559028006-448665bd7c7f?w=800&h=600&fit=crop',
+      'https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=600&fit=crop'
     ],
     githubUrl: 'https://github.com/Anuvesh07/Whitezilla',
     featured: true,
@@ -57,11 +57,11 @@ export const projects: Project[] = [
     longDescription: 'A clean and easy-to-use blogging site where your words come first. No clutter, no distractions — just a smooth space to write and share your thoughts. Built with modern web technologies for optimal writing experience.',
     technologies: ['TypeScript', 'Next.js', 'Tailwind CSS', 'Markdown'],
     category: 'web',
-    image: '/images/Versha_.png',
+    image: 'https://images.unsplash.com/photo-1486312338219-ce68e2c6b7d3?w=800&h=600&fit=crop',
     images: [
-      '/images/Versha_.png',
-      '/images/Versha_.png',
-      '/images/Versha_.png'
+      'https://images.unsplash.com/photo-1486312338219-ce68e2c6b7d3?w=800&h=600&fit=crop',
+      'https://images.unsplash.com/photo-1455390582262-044cdead277a?w=800&h=600&fit=crop',
+      'https://images.unsplash.com/photo-1432888622747-4eb9a8efeb07?w=800&h=600&fit=crop'
     ],
     githubUrl: 'https://github.com/Anuvesh07/Veshara',
     featured: true,
@@ -73,11 +73,11 @@ export const projects: Project[] = [
     longDescription: 'A simple web app that lets you convert Markdown and other text formats into clean, professional PDFs — right from your browser. Fast, minimal, and dev-friendly. Perfect for creating documentation, reports, and formatted documents.',
     technologies: ['TypeScript', 'Next.js', 'Tailwind CSS', 'PDF Generation'],
     category: 'web',
-    image: '/images/Printscript.png',
+    image: 'https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=800&h=600&fit=crop',
     images: [
-      '/images/Printscript.png',
-      '/images/Printscript.png',
-      '/images/Printscript.png'
+      'https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=800&h=600&fit=crop',
+      'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=800&h=600&fit=crop',
+      'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=600&fit=crop'
     ],
     liveUrl: 'https://printscript-cilre1mko-masters-projects-0e320efc.vercel.app/',
     githubUrl: 'https://github.com/Anuvesh07/PrintScript',
@@ -90,11 +90,11 @@ export const projects: Project[] = [
     longDescription: 'KSA (Kindred Supportive Assistant) is an innovative AI-powered assistant designed to provide supportive and helpful interactions. This project is currently under active development, exploring the intersection of artificial intelligence and human-centered design.',
     technologies: ['AI/ML', 'Python', 'Natural Language Processing', 'Machine Learning'],
     category: 'other',
-    image: '/images/KSA.png',
+    image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop',
     images: [
-      '/images/KSA.png',
-      '/images/KSA.png',
-      '/images/KSA.png'
+      'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop',
+      'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=800&h=600&fit=crop',
+      'https://images.unsplash.com/photo-1555255707-c07966088b7b?w=800&h=600&fit=crop'
     ],
     featured: false,
   },

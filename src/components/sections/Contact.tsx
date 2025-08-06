@@ -5,7 +5,7 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { motion } from 'framer-motion';
 import { Mail, MapPin, Send, Loader2, CheckCircle, AlertCircle } from 'lucide-react';
-import { Button } from '@/components/ui/Button';
+import { Button } from "@/components/ui/button";
 import { Input, Textarea } from '@/components/ui/Input';
 import { ContactFormSchema, type ContactFormData } from '@/lib/validations';
 import { SOCIAL_LINKS, ANIMATION_VARIANTS } from '@/lib/constants';
@@ -161,15 +161,14 @@ export function Contact({ className }: ContactProps) {
 
             {/* Quick Contact Button */}
             <div>
-              <motion.a
-                href={`mailto:${SOCIAL_LINKS.email}?subject=Hello!&body=Hi there, I'd like to get in touch about...`}
-                className="inline-flex items-center space-x-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition-colors"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
+              <Button
+                onClick={() => window.open(`mailto:${SOCIAL_LINKS.email}?subject=Hello!&body=Hi there, I'd like to get in touch about...`, '_self')}
+                className="w-44 h-12 text-sm font-medium"
+                size="default"
               >
-                <Mail className="w-5 h-5" />
-                <span>Send Quick Email</span>
-              </motion.a>
+                <Mail className="w-4 h-4 mr-2" />
+                Send Quick Mail
+              </Button>
             </div>
 
             {/* Social Links */}
@@ -269,7 +268,7 @@ export function Contact({ className }: ContactProps) {
               <Button
                 type="submit"
                 disabled={isSubmitting || formStatus.type === 'loading'}
-                className="w-full"
+                className="w-full h-12 text-sm font-medium"
                 size="lg"
               >
                 {isSubmitting || formStatus.type === 'loading' ? (

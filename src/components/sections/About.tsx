@@ -2,8 +2,8 @@
 
 import { motion } from 'framer-motion';
 import { Download, Calendar, MapPin, Mail } from 'lucide-react';
-import { Button } from '@/components/ui/Button';
-import { Card, CardContent } from '@/components/ui/Card';
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from '@/components/ui/card';
 
 const About = () => {
 
@@ -68,21 +68,22 @@ const About = () => {
                 </p>
               </div>
 
-              <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                <Button 
+              <div className="flex flex-col sm:flex-row gap-6 pt-4">
+                <Button
                   onClick={handleDownloadResume}
-                  variant="primary"
-                  className="flex items-center gap-2"
+                  className="w-52 h-14 text-base font-medium"
+                  size="lg"
                 >
-                  <Download size={18} />
+                  <Download size={18} className="mr-2" />
                   Download Resume
                 </Button>
-                <Button 
+                <Button
                   variant="outline"
-                  className="flex items-center gap-2"
                   onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                  className="w-52 h-14 text-base font-medium"
+                  size="lg"
                 >
-                  <Mail size={18} />
+                  <Mail size={18} className="mr-2" />
                   Get In Touch
                 </Button>
               </div>

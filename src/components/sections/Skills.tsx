@@ -3,8 +3,8 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import { skillGroups, getAverageSkillLevel } from '@/data/skills';
-import { Card, CardContent } from '@/components/ui/Card';
-import { Button } from '@/components/ui/Button';
+import { Card, CardContent } from '@/components/ui/card';
+import { LiquidButton } from '@/components/ui/liquid-glass-button';
 import { 
   Code2, 
   Server, 
@@ -186,27 +186,27 @@ const Skills = () => {
 
           {/* Category Filter Buttons */}
           <div className="flex flex-wrap justify-center gap-3">
-            <Button
-              variant={selectedCategory === null ? "primary" : "outline"}
+            <LiquidButton
+              variant={selectedCategory === null ? "default" : "outline"}
               size="sm"
               onClick={() => setSelectedCategory(null)}
               className="flex items-center gap-2"
             >
               All Skills
-            </Button>
+            </LiquidButton>
             {skillGroups.map((group) => {
               const Icon = categoryIcons[group.category];
               return (
-                <Button
+                <LiquidButton
                   key={group.category}
-                  variant={selectedCategory === group.category ? "primary" : "outline"}
+                  variant={selectedCategory === group.category ? "default" : "outline"}
                   size="sm"
                   onClick={() => setSelectedCategory(group.category)}
                   className="flex items-center gap-2"
                 >
                   <Icon size={16} />
                   {categoryLabels[group.category]}
-                </Button>
+                </LiquidButton>
               );
             })}
           </div>

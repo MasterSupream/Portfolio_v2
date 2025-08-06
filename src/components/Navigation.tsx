@@ -1,8 +1,8 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Home, User, Code, Mail } from 'lucide-react';
-import { Button } from './ui/Button';
+import { Menu, X } from 'lucide-react';
+import { LiquidButton } from './ui/liquid-glass-button';
 import { ThemeToggle } from './ThemeToggle';
 import { NAV_ITEMS } from '@/lib/constants';
 import { useActiveSection } from '@/hooks/useActiveSection';
@@ -149,48 +149,26 @@ export function Navigation() {
               className="hidden md:block"
             >
               <div className="ml-10 flex items-baseline space-x-4">
-                {NAV_ITEMS.map((item, index) => {
-                  // Map each nav item to its corresponding icon
-                  const IconComponent = (() => {
-                    switch(item.id) {
-                      case 'hero': return Home;
-                      case 'about': return User;
-                      case 'projects': return Code;
-                      case 'contact': return Mail;
-                      default: return Home;
-                    }
-                  })();
-                  
-                  return (
-                    <motion.button
-                      key={item.id}
-                      initial={{ opacity: 0, y: -20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.3, delay: 0.3 + index * 0.1 }}
-                      onClick={() => scrollToSection(item.id)}
-                      onKeyDown={(e) => handleNavKeyDown(e, item.id)}
-                      className={`p-2 rounded-md text-sm font-medium transition-all duration-200 focus-visible relative group ${
-                        activeSection === item.id
-                          ? 'text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/20'
-                          : 'text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-100 dark:hover:bg-gray-800'
-                      }`}
-                      aria-label={`Navigate to ${item.label} section`}
-                      aria-current={activeSection === item.id ? 'page' : undefined}
-                      tabIndex={0}
-                      title={item.label}
-                    >
-                      <div className="relative">
-                          <IconComponent className={`h-5 w-5 transition-all duration-300 group-hover:scale-110 ${activeSection === item.id ? 'text-blue-600 dark:text-blue-400' : ''}`} />
-                          {activeSection === item.id && (
-                            <span className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-1.5 h-1.5 bg-blue-600 dark:bg-blue-400 rounded-full"></span>
-                          )}
-                          <div className="absolute left-1/2 -translate-x-1/2 -bottom-8 px-2 py-1 bg-gray-800 dark:bg-gray-700 text-white text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap pointer-events-none z-10">
-                            {item.label}
-                          </div>
-                        </div>
-                    </motion.button>
-                  );
-                })}
+                {NAV_ITEMS.map((item, index) => (
+                  <motion.button
+                    key={item.id}
+                    initial={{ opacity: 0, y: -20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.3, delay: 0.3 + index * 0.1 }}
+                    onClick={() => scrollToSection(item.id)}
+                    onKeyDown={(e) => handleNavKeyDown(e, item.id)}
+                    className={`px-3 py-2 rounded-md text-sm font-medium transition-all duration-200 focus-visible ${
+                      activeSection === item.id
+                        ? 'text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/20'
+                        : 'text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-100 dark:hover:bg-gray-800'
+                    }`}
+                    aria-label={`Navigate to ${item.label} section`}
+                    aria-current={activeSection === item.id ? 'page' : undefined}
+                    tabIndex={0}
+                  >
+                    {item.label}
+                  </motion.button>
+                ))}
               </div>
             </motion.div>
 
@@ -201,9 +179,7 @@ export function Navigation() {
               transition={{ duration: 0.3, delay: 0.4 }}
               className="hidden md:block"
             >
-              <div className="p-1 rounded-lg bg-gray-50/50 dark:bg-gray-800/50 backdrop-blur-sm shadow-sm">
-                <ThemeToggle />
-              </div>
+              <ThemeToggle />
             </motion.div>
 
             {/* Mobile menu button */}
@@ -211,21 +187,19 @@ export function Navigation() {
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.3, delay: 0.2 }}
-              className="md:hidden flex items-center space-x-3"
+              className="md:hidden flex items-center space-x-2"
             >
-              <div className="p-1 rounded-lg bg-gray-50/50 dark:bg-gray-800/50 backdrop-blur-sm shadow-sm">
-                <ThemeToggle />
-              </div>
-              <Button
+              <ThemeToggle />
+              <LiquidButton
                 variant="outline"
-                size="sm"
+                size="icon"
                 onClick={() => setIsOpen(!isOpen)}
                 className="menu-button p-2"
                 aria-label={isOpen ? 'Close menu' : 'Open menu'}
                 aria-expanded={isOpen}
               >
                 {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-              </Button>
+              </LiquidButton>
             </motion.div>
           </div>
         </nav>
@@ -257,61 +231,40 @@ export function Navigation() {
                 {/* Mobile menu header */}
                 <div className="flex items-center justify-between p-4 border-b border-gray-200 dark:border-gray-800">
                   <span className="text-lg font-semibold gradient-text">Menu</span>
-                  <Button
+                  <LiquidButton
                     variant="outline"
-                    size="sm"
+                    size="icon"
                     onClick={() => setIsOpen(false)}
                     className="p-2"
                     aria-label="Close menu"
                   >
                     <X className="h-4 w-4" />
-                  </Button>
+                  </LiquidButton>
                 </div>
 
                 {/* Mobile menu items */}
                 <nav className="flex-1 px-4 py-6">
                   <div className="space-y-2">
-                    {NAV_ITEMS.map((item, index) => {
-                      // Map each nav item to its corresponding icon
-                      const IconComponent = (() => {
-                        switch(item.id) {
-                          case 'hero': return Home;
-                          case 'about': return User;
-                          case 'projects': return Code;
-                          case 'contact': return Mail;
-                          default: return Home;
-                        }
-                      })();
-                      
-                      return (
-                        <motion.button
-                          key={item.id}
-                          initial={{ opacity: 0, x: 20 }}
-                          animate={{ opacity: 1, x: 0 }}
-                          transition={{ duration: 0.2, delay: index * 0.1 }}
-                          onClick={() => scrollToSection(item.id)}
-                          onKeyDown={(e) => handleNavKeyDown(e, item.id)}
-                          className={`w-full text-left px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 focus-visible ${
-                            activeSection === item.id
-                              ? 'text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/20'
-                              : 'text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-100 dark:hover:bg-gray-800'
-                          }`}
-                          aria-label={`Navigate to ${item.label} section`}
-                          aria-current={activeSection === item.id ? 'page' : undefined}
-                          tabIndex={0}
-                        >
-                          <div className="flex items-center">
-                            <div className="relative">
-                              <IconComponent className={`h-5 w-5 mr-3 transition-all duration-300 ${activeSection === item.id ? 'text-blue-600 dark:text-blue-400' : ''}`} />
-                              {activeSection === item.id && (
-                                <span className="absolute -right-1 top-1/2 transform -translate-y-1/2 w-1.5 h-1.5 bg-blue-600 dark:bg-blue-400 rounded-full"></span>
-                              )}
-                            </div>
-                            <span>{item.label}</span>
-                          </div>
-                        </motion.button>
-                      );
-                    })}
+                    {NAV_ITEMS.map((item, index) => (
+                      <motion.button
+                        key={item.id}
+                        initial={{ opacity: 0, x: 20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.2, delay: index * 0.1 }}
+                        onClick={() => scrollToSection(item.id)}
+                        onKeyDown={(e) => handleNavKeyDown(e, item.id)}
+                        className={`w-full text-left px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 focus-visible ${
+                          activeSection === item.id
+                            ? 'text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/20'
+                            : 'text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-100 dark:hover:bg-gray-800'
+                        }`}
+                        aria-label={`Navigate to ${item.label} section`}
+                        aria-current={activeSection === item.id ? 'page' : undefined}
+                        tabIndex={0}
+                      >
+                        {item.label}
+                      </motion.button>
+                    ))}
                   </div>
                 </nav>
               </div>
